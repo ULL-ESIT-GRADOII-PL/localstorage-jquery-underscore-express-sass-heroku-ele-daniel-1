@@ -12,6 +12,8 @@ var ghPages = require('gulp-gh-pages');
 var clean = require('gulp-clean');
 // Añadimos uglify ya que podemos minimizar los js con webpack
 var uglify = require('gulp-uglify');
+// Para automatizar los sass
+var sass = require('gulp-sass');
 
 // Este gulp es una gran funcion que a partir de los ficheros de entrada
 // produce los de salida f : Files → Files
@@ -20,7 +22,7 @@ var inR = 'src/';
 var input = {
   html: inR + 'html/*.html',
   css: inR + 'css/*.css',
-  sass: inR + 'styles/*sass',
+  sass: inR + 'styles/*.sass',
   js: inR + 'js/*.js'
 };
 
@@ -31,11 +33,11 @@ var output = {
   js: outR + 'js/'
 };
 
-// gulp.task('minify-css', function() {
-//   return gulp.src(paths.css)
-//     .pipe(cleanCSS({compatibility: 'ie8'}))
-//     .pipe(gulp.dest(vendor));
-// });
+gulp.task('sass', function () {
+  return gulp.src(input.sass)
+  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest(output.sass));
+});
 
 gulp.task('minified-js', function() {
   return gulp.src(input.js)
@@ -62,7 +64,8 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
   gulp.watch(input.js,['minified-js']);
   gulp.watch(input.html, ['minify-html']);
+  gulp.watch(input.sass, ['sass']);
 });
 
 // Por defecto, rehacemos todo de nuevo
-gulp.task('default', ['minify-html', "minified-js"]);
+gulp.task('default', ['minify-html', "minified-js", "sass"]);
