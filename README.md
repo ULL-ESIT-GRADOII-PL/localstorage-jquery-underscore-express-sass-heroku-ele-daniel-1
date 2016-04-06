@@ -1,7 +1,7 @@
 #ETSII ULL Grado de Informatica 
 #Práctica:
 
-#REMENBER:
+#REMEMBER:
 ```bash
 sass --watch styles:public --style compressed
 ```
