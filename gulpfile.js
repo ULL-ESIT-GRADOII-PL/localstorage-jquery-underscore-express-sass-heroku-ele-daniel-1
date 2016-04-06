@@ -13,14 +13,22 @@ var clean = require('gulp-clean');
 // Añadimos uglify ya que podemos minimizar los js con webpack
 var uglify = require('gulp-uglify');
 
+// Este gulp es una gran funcion que a partir de los ficheros de entrada
+// produce los de salida f : Files → Files
 
-var src = 'src';
-var vendor = 'public/';
-var paths = {
-  html: src + '*.html',
-  css: src + '/css/*.css',
-  sass: src + '/styles/*sass',
-  js: src + '/js/*.js'
+var inR = 'src/';
+var input = {
+  html: inR + 'html/*.html',
+  css: inR + 'css/*.css',
+  sass: inR + 'styles/*sass',
+  js: inR + 'js/*.js'
+};
+
+var outR = 'public/';
+var output = {
+  html: outR,
+  sass: outR + 'css/',
+  js: outR + 'js/'
 };
 
 // gulp.task('minify-css', function() {
@@ -30,30 +38,30 @@ var paths = {
 // });
 
 gulp.task('minified-js', function() {
-  return gulp.src('*.js')
+  return gulp.src(input.js)
     .pipe(uglify())
-    .pipe(gulp.dest(vendor));
+    .pipe(gulp.dest(output.js));
 });
 
 gulp.task('minify-html', function() {
-  return gulp.src(paths.html)
+  return gulp.src(input.html)
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest(vendor));
+    .pipe(gulp.dest(output.html));
 });
 
 gulp.task('generate-pages', function() {
-  return gulp.src(vendor + '**/*')
+  return gulp.src(outR + '**/*')
     .pipe(ghPages('.'));
 });
 
 gulp.task('clean', function () {
-	return gulp.src(vendor, {read: false})
+	return gulp.src(outR, {read: false})
 		.pipe(clean());
 });
 
 gulp.task('watch', function () {
-  gulp.watch('*.js', ['minified-js']);
-  gulp.watch(paths.html, ['minify-html']);
+  gulp.watch(input.js,['minified-js']);
+  gulp.watch(input.html, ['minify-html']);
 });
 
 // Por defecto, rehacemos todo de nuevo

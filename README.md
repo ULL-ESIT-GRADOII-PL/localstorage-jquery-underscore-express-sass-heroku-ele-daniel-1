@@ -8,6 +8,9 @@ sass --watch styles:public --style compressed
 
 #Comma Separated Values
 
+# Directories
+In _src_ you found all files related to web app
+
 For more information look at:
 # Links
 
