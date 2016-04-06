@@ -1,0 +1,30 @@
+{
+  "name": "csv-prac1",
+  "version": "1.0.0",
+  "description": "#Comma Separated Values",
+  "main": "main.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EleDiaz/csv-prac1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EleDiaz/csv-prac1/issues"
+  },
+  "homepage": "https://github.com/EleDiaz/csv-prac1#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-watch": "^4.3.5",
+    "sass": "^0.5.0"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
