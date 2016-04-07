@@ -11,10 +11,9 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-  response.render('pages/index');
+  res.render('index');
 });
 
 app.listen(app.get('port'), function () {
-  console.log('Example app listening on port 3000!');
-  console.log('localhost:3000 or 127.0.0.1:3000');
+  console.log('Example app listening on port '+ app.get('port'));
 });
