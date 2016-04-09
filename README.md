@@ -1,5 +1,7 @@
-#ETSII ULL Grado de Informatica 
+#ETSII ULL Grado de Informatica
 #Práctica:
+
+[![Build Status](https://travis-ci.org/EleDiaz/csv-prac1.svg?branch=master)](https://travis-ci.org/EleDiaz/csv-prac1)
 
 #Comma Separated Values
 
