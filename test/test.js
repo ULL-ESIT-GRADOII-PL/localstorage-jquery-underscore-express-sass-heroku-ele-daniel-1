@@ -5,7 +5,7 @@ after(function () {
     // When the test either fails or passes, restore the original
     // jQuery ajax function (Sinon.JS also provides tools to help
     // test frameworks automate clean-up like this)
-    document.getElementById.retore();
+    document.getElementById.restore();
 });
 
 describe('CSV', function() {

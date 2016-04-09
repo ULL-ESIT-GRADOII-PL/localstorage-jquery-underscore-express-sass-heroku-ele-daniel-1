@@ -2,7 +2,7 @@ main = function() {
   var original = document.getElementById("original").value;
   if (window.localStorage) localStorage.original = original;
   var r = calculate(original);
-  var template = fillTable.innerHTML;
+  var template = document.getElementById("fillTable").innerHTML;
   var finaltable = document.getElementById("finaltable");
   finaltable.innerHTML = _.template(template, {items: r});
 };
