@@ -3,6 +3,7 @@ main = function() {
   if (window.localStorage) localStorage.original = original;
   var r = calculate(original);
   var template = fillTable.innerHTML;
+  var finaltable = document.getElementById("finaltable");
   finaltable.innerHTML = _.template(template, {items: r});
 };
 

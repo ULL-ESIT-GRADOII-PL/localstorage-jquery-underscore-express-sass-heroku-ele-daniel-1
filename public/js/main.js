@@ -1,0 +1,1 @@
+main=function(){var a=document.getElementById("original").value;window.localStorage&&(localStorage.original=a);var l=calculate(a),i=fillTable.innerHTML;finaltable.innerHTML=_.template(i,{items:l})},$(document).ready(function(){window.localStorage&&localStorage.original&&(original.value=localStorage.original),$("button").click(main)});
