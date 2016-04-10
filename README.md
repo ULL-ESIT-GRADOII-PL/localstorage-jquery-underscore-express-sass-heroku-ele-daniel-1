@@ -1,5 +1,7 @@
-#ETSII ULL Grado de Informatica 
+#ETSII ULL Grado de Informatica
 #Práctica:
+
+[![Build Status](https://travis-ci.org/EleDiaz/csv-prac1.svg?branch=master)](https://travis-ci.org/EleDiaz/csv-prac1)
 
 #Comma Separated Values
 
@@ -14,7 +16,7 @@ momento de forma estática.
 * [Repositorio](https://github.com/EleDiaz/csv-prac1)
 
 **Pruebas del repo**
-* [Tests Page](http://elediaz.github.io/karma-y-travis-ele-daniel-1/test/index.html)
+* [Tests Page](https://ele-dani-csv-analizer.herokuapp.com/test)
 
 **Página de la práctica**
 

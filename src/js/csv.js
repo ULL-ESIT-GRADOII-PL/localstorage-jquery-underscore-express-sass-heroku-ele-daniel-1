@@ -5,7 +5,14 @@
   var regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g;
   exports.calculate = function(original) {
     var lines = original.split(/\n+\s*/);
-    var commonLength = lines[0].match(regexp).length;
+    var commonLength;
+    if (lines) {
+      commonLength = 0;
+    }
+    else {
+      commonLength = lines[0].match(regexp).length;
+    }
+
     var r = [];
     var removeQuotes = function(field) {
       var removecomma = field.replace(/,\s*$/, '');
@@ -37,4 +44,3 @@
     return r;
   };
 })(this);
-
