@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai', 'sinon'],
+    frameworks: ['mocha', 'chai', 'sinon', 'fixture'],
 
     client: {
           mocha: {
@@ -22,6 +22,8 @@ module.exports = function(config) {
     files: [
       //'testk.html',
       'https://code.jquery.com/jquery-1.11.2.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.min.js',
+      //
       'test/index.html',
       'src/js/csv.js',
       'src/js/main.js',

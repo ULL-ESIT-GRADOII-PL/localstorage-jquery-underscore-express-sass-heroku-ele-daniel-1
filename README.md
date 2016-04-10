@@ -16,7 +16,7 @@ momento de forma estática.
 * [Repositorio](https://github.com/EleDiaz/csv-prac1)
 
 **Pruebas del repo**
-* [Tests Page](http://elediaz.github.io/karma-y-travis-ele-daniel-1/test/index.html)
+* [Tests Page](https://ele-dani-csv-analizer.herokuapp.com/test)
 
 **Página de la práctica**
 
